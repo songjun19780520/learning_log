@@ -9,7 +9,7 @@ def register(request):
         # 显示空的注册表单
         form = UserCreationForm()
     else:
-        # 处理填写好的表单
+        # 处理填写好的表单已提交
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
             new_user = form.save()
