@@ -13,7 +13,7 @@ def register(request):
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
             new_user = form.save()
-            # 让用户自动登录，再重新定向到主页我再改一次
+            # 让用户自动登录，再重新定向到主页
             login(request,new_user)
             return redirect('learning_ogs:index')
     content = {'form': form}
